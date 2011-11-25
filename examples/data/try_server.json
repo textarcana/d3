@@ -5,12 +5,6 @@
             "name": "total durations",
             "children": [
                 {
-                    "name": "try server",
-                    "children": [
-                        {"name": "Try", "total duration": 167908721}
-                    ]
-                },
-                {
                     "name": "build-css",
                     "children": [
                         {"name": "build-css", "total duration": 7137876}
