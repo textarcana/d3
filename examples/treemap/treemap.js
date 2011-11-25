@@ -1,18 +1,18 @@
 var w = 960,
     h = 500,
-    color = d3.scale.category20c();
+    color = d3.scale.category20();
 
 var treemap = d3.layout.treemap()
     .size([w, h])
     .sticky(true)
-    .value(function(d) { return d.size; });
+    .value(function(d) { return d["total duration"]; });
 
 var div = d3.select("#chart").append("div")
     .style("position", "relative")
     .style("width", w + "px")
     .style("height", h + "px");
 
-d3.json("../data/flare.json", function(json) {
+d3.json("../data/try_server.json", function(json) {
   div.data([json]).selectAll("div")
       .data(treemap.nodes)
     .enter().append("div")
@@ -21,14 +21,14 @@ d3.json("../data/flare.json", function(json) {
       .call(cell)
       .text(function(d) { return d.children ? null : d.name; });
 
-  d3.select("#size").on("click", function() {
+  d3.select("#total-duration").on("click", function() {
     div.selectAll("div")
-        .data(treemap.value(function(d) { return d.size; }))
+        .data(treemap.value(function(d) { return d['total duration']; }))
       .transition()
         .duration(1500)
         .call(cell);
 
-    d3.select("#size").classed("active", true);
+    d3.select("#total-duration").classed("active", true);
     d3.select("#count").classed("active", false);
   });
 
@@ -39,7 +39,7 @@ d3.json("../data/flare.json", function(json) {
         .duration(1500)
         .call(cell);
 
-    d3.select("#size").classed("active", false);
+    d3.select("#total-duration").classed("active", false);
     d3.select("#count").classed("active", true);
   });
 });
