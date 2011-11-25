@@ -1,0 +1,89 @@
+{
+    "name": "CI build durations",
+    "children": [
+        {
+            "name": "total durations",
+            "children": [
+                {
+                    "name": "try server",
+                    "children": [
+                        {"name": "Try", "total duration": 167908721}
+                    ]
+                },
+                {
+                    "name": "build-css",
+                    "children": [
+                        {"name": "build-css", "total duration": 7137876}
+                    ]
+                },
+                {
+                    "name": "build-templates",
+                    "children": [
+                        {"name": "build-templates", "total duration": 31905298}
+                    ]
+                },
+                {
+                    "name": "cache-tests",
+                    "children": [
+                        {"name": "cache-tests", "total duration": 25944362}
+                    ]
+                },
+                {
+                    "name": "dataset-tests",
+                    "children": [
+                        {"name": "dataset-tests", "total duration": 7321287}
+                    ]
+                },
+                {
+                    "name": "dbunit-slow-tests",
+                    "children": [
+                        {"name": "dbunit-slow-tests", "total duration": 34810482}
+                    ]
+                },
+                {
+                    "name": "dbunit-tests",
+                    "children": [
+                        {"name": "dbunit-tests", "total duration": 50473384}
+                    ]
+                },
+                {
+                    "name": "gearman-smoker",
+                    "children": [
+                        {"name": "gearman-smoker", "total duration": 4286252}
+                    ]
+                },
+                {
+                    "name": "php-code-sniffer",
+                    "children": [
+                        {"name": "php-code-sniffer", "total duration": 43435128}
+                    ]
+                },
+                {
+                    "name": "php-lint",
+                    "children": [
+                        {"name": "php-lint", "total duration": 13942867}
+                    ]
+                },
+                {
+                    "name": "replication-tests",
+                    "children": [
+                        {"name": "replication-tests", "total duration": 19143439}
+                    ]
+                },
+                {
+                    "name": "unit-tests",
+                    "children": [
+                        {"name": "unit-tests", "total duration": 61169462}
+                    ]
+                },
+                {
+                    "name": "validate-css",
+                    "children": [
+                        {"name": "validate-css", "total duration": 476949}
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
