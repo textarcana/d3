@@ -1,79 +1,49 @@
 {
-    "name": "CI build durations",
+    "name": "QA sub-build durations, week of 18 Nov 2011 03:38 through 25 Nov 2011 03:38 GMT",
     "children": [
         {
             "name": "total durations",
             "children": [
                 {
-                    "name": "build-css",
+                    "name": "Builda",
                     "children": [
-                        {"name": "build-css", "total duration": 7137876}
+                        {"name": "build-css", "total duration": 7137876},
+                        {"name": "build-templates", "total duration": 31905298},
+                        {"name": "validate-css", "total duration": 476949}
                     ]
                 },
                 {
-                    "name": "build-templates",
-                    "children": [
-                        {"name": "build-templates", "total duration": 31905298}
-                    ]
-                },
-                {
-                    "name": "cache-tests",
-                    "children": [
-                        {"name": "cache-tests", "total duration": 25944362}
-                    ]
-                },
-                {
-                    "name": "dataset-tests",
+                    "name": "Dev DB",
                     "children": [
                         {"name": "dataset-tests", "total duration": 7321287}
                     ]
                 },
                 {
-                    "name": "dbunit-slow-tests",
+                    "name": "DBUnit",
                     "children": [
-                        {"name": "dbunit-slow-tests", "total duration": 34810482}
+                        {"name": "cache-tests", "total duration": 25944362},
+                        {"name": "dbunit-slow-tests", "total duration": 34810482},
+                        {"name": "dbunit-tests", "total duration": 50473384},
+                        {"name": "replication-tests", "total duration": 19143439}
                     ]
                 },
                 {
-                    "name": "dbunit-tests",
-                    "children": [
-                        {"name": "dbunit-tests", "total duration": 50473384}
-                    ]
-                },
-                {
-                    "name": "gearman-smoker",
+                    "name": "Smoke Tests",
                     "children": [
                         {"name": "gearman-smoker", "total duration": 4286252}
                     ]
                 },
                 {
-                    "name": "php-code-sniffer",
+                    "name": "Static Analysis",
                     "children": [
-                        {"name": "php-code-sniffer", "total duration": 43435128}
-                    ]
-                },
-                {
-                    "name": "php-lint",
-                    "children": [
+                        {"name": "php-code-sniffer", "total duration": 43435128},
                         {"name": "php-lint", "total duration": 13942867}
-                    ]
-                },
-                {
-                    "name": "replication-tests",
-                    "children": [
-                        {"name": "replication-tests", "total duration": 19143439}
                     ]
                 },
                 {
                     "name": "unit-tests",
                     "children": [
                         {"name": "unit-tests", "total duration": 61169462}
-                    ]
-                },
-                {
-                    "name": "validate-css",
-                    "children": [
-                        {"name": "validate-css", "total duration": 476949}
                     ]
                 }
             ]
