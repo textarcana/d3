@@ -8,6 +8,7 @@
                     "name": "Builda",
                     "children": [
                         {"name": "build-css", "total duration": 7137876},
+                        {"name": "build-js", "total duration": 7137876},
                         {"name": "build-templates", "total duration": 31905298},
                         {"name": "validate-css", "total duration": 476949}
                     ]
