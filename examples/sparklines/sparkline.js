@@ -50,7 +50,7 @@ d3.json("nlwest.json", function(json) {
         g.append("svg:path")
          .attr("d", line(json[team]))
          .attr("stroke", function(d) { return fill(team); })
-         .attr("class", "team");
+         .attr("class", team);
         g.append("svg:title")
          .text(team);
     }
