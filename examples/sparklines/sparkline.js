@@ -10,7 +10,7 @@ var webDeploysPerDay2011 = [22, 0, 0, 29, 26, 24, 27, 19, 1, 0, 21, 15, 13, 10, 
 data = webDeploysPerDay2011;
 
 var x = d3.scale.linear().domain([0, 366]).range([0, 366]);
-var y = d3.scale.linear().domain([40, 0]).range([0, 20]);
+var y = d3.scale.linear().domain([50, 0]).range([0, 28]);
 
 var line = d3.svg.line()
   .x(function(d,i) {
