@@ -4,8 +4,8 @@ var width = 960,
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(30)
+    .charge(-360)
+    .linkDistance(90)
     .size([width, height]);
 
 var svg = d3.select("#chart").append("svg")
@@ -29,7 +29,7 @@ d3.json("example_data.json", function(json) {
       .data(json.nodes)
     .enter().append("circle")
       .attr("class", "node")
-      .attr("r", 5)
+      .attr("r", 15)
       .style("fill", function(d) { return color(d.group); })
       .call(force.drag);
 
