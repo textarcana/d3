@@ -23,7 +23,7 @@ d3.json("example_data.json", function(json) {
     .enter().append("line")
       .attr("class", "link")
       .style("stroke-width", function(d) { return Math.sqrt(d.value); })
-      .style("stroke", function(d) { return color(d.group); });
+    .style("stroke", function(d) { return (d.mutual === true ? '#f00' : '#333'); });
 
   var node = svg.selectAll("circle.node")
       .data(json.nodes)

@@ -1,34 +1,36 @@
 {
   "links": [
     {
+      "mutual": true,
       "value": 0,
-      "target": 2,
+      "target": 3,
       "source": 0
     },
     {
+      "mutual": false,
       "value": 0,
-      "target": 1,
-      "source": 0
-    },
-    {
-      "value": 0,
-      "target": 1,
-      "source": 2
+      "target": 3,
+      "source": 1
     }
   ],
   "nodes": [
     {
-      "name": "Foo",
+      "name": "Homer Simpson",
       "group": 1
     },
     {
-      "name": "Bar",
+      "name": "Marge Simpson",
       "group": 2
     },
     {
-      "name": "Baz",
-      "group": 3
+      "name": "Moe's Tavern gift certificate",
+      "group": 2
+    },
+    {
+      "name": "Rancho Relaxo gift certificate",
+      "group": 1
     }
+
 
   ]
 }
