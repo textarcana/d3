@@ -2,7 +2,6 @@
   "links": [
     {
       "mutual": true,
-      "value": 0,
       "target": 1,
       "source": 0
     }
