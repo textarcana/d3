@@ -22,7 +22,8 @@ d3.json("example_data.json", function(json) {
       .data(json.links)
     .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+      .style("stroke-width", function(d) { return Math.sqrt(d.value); })
+      .style("stroke", function(d) { return color(d.group); });
 
   var node = svg.selectAll("circle.node")
       .data(json.nodes)
