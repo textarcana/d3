@@ -3,14 +3,8 @@
     {
       "mutual": true,
       "value": 0,
-      "target": 3,
+      "target": 1,
       "source": 0
-    },
-    {
-      "mutual": false,
-      "value": 0,
-      "target": 3,
-      "source": 1
     }
   ],
   "nodes": [
@@ -20,17 +14,7 @@
     },
     {
       "name": "Marge Simpson",
-      "group": 2
-    },
-    {
-      "name": "Moe's Tavern gift certificate",
-      "group": 2
-    },
-    {
-      "name": "Rancho Relaxo gift certificate",
       "group": 1
     }
-
-
   ]
 }
