@@ -1,11 +1,16 @@
-var width = 960,
-    height = 500;
+var size = 5;
+var distance = size;
+var unit = 5;
+
+
+var width = document.width,
+    height = document.height;
 
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-360)
-    .linkDistance(90)
+    .charge(-7 * distance * 120)
+    .linkDistance(distance * 30)
     .size([width, height]);
 
 var svg = d3.select("#chart").append("svg")
@@ -22,14 +27,14 @@ d3.json("example_data.json", function(json) {
       .data(json.links)
     .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", 5)
+      .style("stroke-width", unit)
     .style("stroke", function(d) { return (d.mutual === true ? '#f00' : '#333'); });
 
   var node = svg.selectAll("circle.node")
       .data(json.nodes)
     .enter().append("circle")
       .attr("class", "node")
-      .attr("r", 15)
+      .attr("r", size * unit)
       .style("fill", function(d) { return color(d.group); })
       .call(force.drag);
 
