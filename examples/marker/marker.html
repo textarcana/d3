@@ -3,9 +3,7 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Mobile Patent Suits</title>
-    <script type="text/javascript" src="../../d3.js"></script>
-    <script type="text/javascript" src="../../d3.geom.js"></script>
-    <script type="text/javascript" src="../../d3.layout.js"></script>
+    <script type="text/javascript" src="../../d3.v2.js"></script>
     <style type="text/css">
 
 path.link {
@@ -88,21 +86,21 @@ links.forEach(function(link) {
   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
 });
 
-var w = 960,
-    h = 500;
+var width = 960,
+    height = 500;
 
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
     .links(links)
-    .size([w, h])
+    .size([width, height])
     .linkDistance(60)
     .charge(-300)
     .on("tick", tick)
     .start();
 
 var svg = d3.select("body").append("svg")
-    .attr("width", w)
-    .attr("height", h);
+    .attr("width", width)
+    .attr("height", height);
 
 // Per-type markers, as they don't inherit styles.
 svg.append("defs").selectAll("marker")

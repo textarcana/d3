@@ -1,5 +1,4 @@
 require("../env");
-require("../../d3");
 
 var vows = require("vows"),
     assert = require("assert");
@@ -27,6 +26,28 @@ suite.addBatch({
     },
     "interpolates objects": function(interpolate) {
       assert.deepEqual(interpolate({foo: 2}, {foo: 12})(.4), {foo: 6});
+    },
+    "may or may not interpolate between enumerable and non-enumerable properties": function(interpolate) {
+      var a = Object.create({}, {foo: {value: 1, enumerable: true}}),
+          b = Object.create({}, {foo: {value: 2, enumerable: false}});
+      try {
+        assert.deepEqual(interpolate(a, b)(1), {});
+      } catch (e) {
+        assert.deepEqual(interpolate(a, b)(1), {foo: 2});
+      }
+      try {
+        assert.deepEqual(interpolate(b, a)(1), {});
+      } catch (e) {
+        assert.deepEqual(interpolate(b, a)(1), {foo: 1});
+      }
+    },
+    "interpolates inherited properties of objects": function(interpolate) {
+      var a = Object.create({foo: 0}),
+          b = Object.create({foo: 2});
+      assert.deepEqual(interpolate(a, b)(.5), {foo: 1});
+    },
+    "doesn't interpret properties in the default object's prototype chain as RGB": function(interpolate) {
+      assert.equal(interpolate("hasOwnProperty", "hasOwnProperty")(0), "hasOwnProperty");
     }
   }
 });
@@ -76,9 +97,16 @@ suite.addBatch({
       assert.equal(interpolate(" 10/20 100 20", "50/10 100, 20 ")(.2), "18/18 100, 20 ");
       assert.equal(interpolate(" 10/20 100 20", "50/10 100, 20 ")(.4), "26/16 100, 20 ");
     },
+    "interpolates decimal notation correctly": function(interpolate) {
+      assert.equal(interpolate("1.", "2.")(.5), "1.5");
+    },
     "interpolates exponent notation correctly": function(interpolate) {
       assert.equal(interpolate("1e+3", "1e+4")(.5), "5500");
       assert.equal(interpolate("1e-3", "1e-4")(.5), "0.00055");
+      assert.equal(interpolate("1.e-3", "1.e-4")(.5), "0.00055");
+      assert.equal(interpolate("-1.e-3", "-1.e-4")(.5), "-0.00055");
+      assert.equal(interpolate("+1.e-3", "+1.e-4")(.5), "0.00055");
+      assert.equal(interpolate(".1e-2", ".1e-3")(.5), "0.00055");
     }
   }
 });

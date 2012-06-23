@@ -1,19 +1,19 @@
-var w = 960,
-    h = 500,
+var width = 960,
+    height = 500,
     line = d3.svg.line(),
-    points = d3.range(1, 5).map(function(i) { return [i * w / 5, 50 + Math.random() * (h - 100)]; }),
+    points = d3.range(1, 5).map(function(i) { return [i * width / 5, 50 + Math.random() * (height - 100)]; }),
     dragged = null,
     selected = points[0];
 
 var vis = d3.select("#chart").append("svg")
-    .attr("width", w)
-    .attr("height", h);
+    .attr("width", width)
+    .attr("height", height);
 
 vis.append("rect")
-    .attr("width", w)
-    .attr("height", h)
+    .attr("width", width)
+    .attr("height", height)
     .on("mousedown", function() {
-      points.push(selected = dragged = d3.svg.mouse(vis.node()));
+      points.push(selected = dragged = d3.mouse(vis.node()));
       update();
     });
 
@@ -57,9 +57,6 @@ function update() {
       .data(points, function(d) { return d; });
 
   circle.enter().append("circle")
-      .attr("class", function(d) { return d === selected ? "selected" : null; })
-      .attr("cx", function(d) { return d[0]; })
-      .attr("cy", function(d) { return d[1]; })
       .attr("r", 1e-6)
       .on("mousedown", function(d) {
         selected = dragged = d;
@@ -71,7 +68,7 @@ function update() {
       .attr("r", 6.5);
 
   circle
-      .attr("class", function(d) { return d === selected ? "selected" : null; })
+      .classed("selected", function(d) { return d === selected; })
       .attr("cx", function(d) { return d[0]; })
       .attr("cy", function(d) { return d[1]; });
 
@@ -86,9 +83,9 @@ function update() {
 
 function mousemove() {
   if (!dragged) return;
-  var m = d3.svg.mouse(vis.node());
-  dragged[0] = Math.max(0, Math.min(w, m[0]));
-  dragged[1] = Math.max(0, Math.min(h, m[1]));
+  var m = d3.mouse(vis.node());
+  dragged[0] = Math.max(0, Math.min(width, m[0]));
+  dragged[1] = Math.max(0, Math.min(height, m[1]));
   update();
 }
 

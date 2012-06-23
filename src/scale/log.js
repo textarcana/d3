@@ -51,11 +51,11 @@ function d3_scale_log(linear, log) {
   scale.tickFormat = function(n, format) {
     if (arguments.length < 2) format = d3_scale_logFormat;
     if (arguments.length < 1) return format;
-    var k = n / scale.ticks().length,
+    var k = Math.max(.1, n / scale.ticks().length),
         f = log === d3_scale_logn ? (e = -1e-12, Math.floor) : (e = 1e-12, Math.ceil),
         e;
     return function(d) {
-      return d / pow(f(log(d) + e)) < k ? format(d) : "";
+      return d / pow(f(log(d) + e)) <= k ? format(d) : "";
     };
   };
 
@@ -64,16 +64,16 @@ function d3_scale_log(linear, log) {
   };
 
   return d3_scale_linearRebind(scale, linear);
-};
+}
 
 var d3_scale_logFormat = d3.format(".0e");
 
 function d3_scale_logp(x) {
-  return Math.log(x) / Math.LN10;
+  return Math.log(x < 0 ? 0 : x) / Math.LN10;
 }
 
 function d3_scale_logn(x) {
-  return -Math.log(-x) / Math.LN10;
+  return -Math.log(x > 0 ? 0 : -x) / Math.LN10;
 }
 
 d3_scale_logp.pow = function(x) {
