@@ -1,4 +1,4 @@
-var size = 5;
+var size = 3;
 var distance = size;
 var unit = 5;
 
@@ -9,7 +9,7 @@ var width = document.width,
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-7 * distance * 120)
+    .charge(-1 * size * distance * 120)
     .linkDistance(distance * 30)
     .size([width, height]);
 

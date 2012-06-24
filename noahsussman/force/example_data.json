@@ -1,8 +1,38 @@
 {
   "links": [
     {
-      "mutual": true,
+      "mutual": false,
       "target": 1,
+      "source": 0
+    },
+    {
+      "mutual": false,
+      "target": 2,
+      "source": 0
+    },
+    {
+      "mutual": false,
+      "target": 2,
+      "source": 1
+    },
+    {
+      "mutual": false,
+      "target": 3,
+      "source": 1
+    },
+    {
+      "mutual": false,
+      "target": 4,
+      "source": 1
+    },
+    {
+      "mutual": false,
+      "target": 5,
+      "source": 2
+    },
+    {
+      "mutual": true,
+      "target": 6,
       "source": 0
     }
   ],
@@ -14,6 +44,42 @@
     {
       "name": "Marge Simpson",
       "group": 1
+    },
+    {
+      "name": "Moe Sizlak",
+      "group": 1
+    },
+    {
+      "name": "Milhouse Van Houten",
+      "group": 1
+    },
+    {
+      "name": "Disco Stu",
+      "group": 1
+    },
+    {
+      "name": "Seymour Skinner",
+      "group": 1
+    },
+    {
+      "name": "Edna Kerbopple",
+      "group": 1
+    },
+    {
+      "name": "Eric Cartman",
+      "group": 2
+    },
+    {
+      "name": "Kyle Brovlovski",
+      "group": 2
+    },
+    {
+      "name": "Mr. Garrisson",
+      "group": 2
+    },
+    {
+      "name": "Mr. Hat",
+      "group": 2
     }
   ]
 }
