@@ -19,5 +19,21 @@
     </style>
   </head>
   <body>
+
+    <script type="text/javascript">
+      var my_data = [1,2,3,4,5];
+
+      d3.select("body").selectAll("div")
+          .data(my_data)
+          .enter()
+          .append("div")
+          .attr('class', 'box');
+
+      d3.selectAll('.box')
+          .data(my_data)
+          .style("height", function(d) {
+              return d + "px";
+          });
+    </script>
   </body>
 </html>
